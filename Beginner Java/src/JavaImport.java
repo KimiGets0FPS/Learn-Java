@@ -9,7 +9,7 @@ public class JavaImport {
         System.out.print("Enter another number: ");
         int number2 = input.nextInt();
         int answer = number + number2;
-        System.out.println("You inputed: "+ answer);
+        System.out.println("You inputted: "+ answer);
         input.close();
     }
 }

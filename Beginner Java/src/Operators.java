@@ -2,12 +2,11 @@ public class Operators {
     public static void main(String[] args) {
         /*
         ! math operators
-        +  --> add
-        -  --> subtraction
+        * +  --> add
+        * -  --> subtraction
         * ->> multiplication
-        /  --> division
-        %  --> modulo or. remainder after division
-        examples:
+        * /  --> division
+        * %  --> modulo or. remainder after division
         */
         int a = 10, b = 5;
         System.out.println("a + b = " + (a + b));  //* addition, answer = 15
@@ -58,7 +57,8 @@ public class Operators {
         //* ! operator
         System.out.println(!(5 == 3));  // true
         System.out.println(!(5 > 3));  // false
-        /* Unary Operators
+        /*
+        ! Unary Operatorsp
         * +  Unary Plus operator
         * -  Unary Minus operators
         * ++  Increment operator

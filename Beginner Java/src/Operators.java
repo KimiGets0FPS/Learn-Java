@@ -58,7 +58,7 @@ public class Operators {
         System.out.println(!(5 == 3));  // true
         System.out.println(!(5 > 3));  // false
         /*
-        ! Unary Operatorsp
+        ! Unary Operators
         * +  Unary Plus operator
         * -  Unary Minus operators
         * ++  Increment operator

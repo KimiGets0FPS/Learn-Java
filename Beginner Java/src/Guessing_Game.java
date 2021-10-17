@@ -12,6 +12,7 @@ public class Guessing_Game {
             int num_times = times.nextInt();  // the user's option for the number of times he/she wants to go
             Random number = new Random();  // the random number
             int random_num = number.nextInt(50);
+            times.close();
 
             while(num_times > 0) {
                 Scanner guess = new Scanner(System.in);
@@ -31,6 +32,7 @@ public class Guessing_Game {
                 if (num_times == 0 || win) {
                     break;
                 }
+                guess.close();
             }
             System.out.println("\nThe number was: " + random_num);
             Scanner go_again = new Scanner(System.in);
@@ -38,6 +40,7 @@ public class Guessing_Game {
             boolean decision = go_again.nextBoolean();
             if (!decision) { System.out.println("Thanks for playing!"); }
             if(!decision) { flag=false; }
+            go_again.close();
         }
     }
 }

@@ -1,4 +1,5 @@
-import java.util.Objects;
+package Projects;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -17,7 +18,7 @@ public class Dice_rolling {
             Scanner again = new Scanner(System.in);
             System.out.print("Roll Again (Yes or No): ");
             String no = again.nextLine();
-            if (Objects.equals(no, "no")) {
+            if (no.equals("no")) {
                 return;
             }
         }

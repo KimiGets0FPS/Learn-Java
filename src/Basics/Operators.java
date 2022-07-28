@@ -1,3 +1,5 @@
+package Basics;
+
 public class Operators {
     public static void main(String[] args) {
         /*
@@ -42,7 +44,7 @@ public class Operators {
 
         System.out.println(a <= b);  //* <=operator, true
 
-        /* Logical Operators
+        /* Logical Basics.Basics.Operators
         * && logical AND operator
         * || logical OR operator
         * ! logical NOT operator
@@ -58,7 +60,7 @@ public class Operators {
         System.out.println(!(5 == 3));  // true
         System.out.println(!(5 > 3));  // false
         /*
-        ! Unary Operators
+        ! Unary Basics.Basics.Operators
         * +  Unary Plus operator
         * -  Unary Minus operators
         * ++  Increment operator

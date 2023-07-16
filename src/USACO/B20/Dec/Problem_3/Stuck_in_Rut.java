@@ -1,4 +1,4 @@
-package USACO.B20.December.Problem_3;
+package USACO.B20.Dec.Problem_3;
 
 import java.util.*;
 import java.io.*;

@@ -13,12 +13,13 @@ public class Sleepy_Cow_Herding {
         for (int i = 0; i < 3; i++) {
             cows[i] = Integer.parseInt(st.nextToken());
         }
+        br.close();
         Arrays.sort(cows);
 
         if (cows[2] - cows[0] == 2) {  // if the cows are already in order
             pw.println(0);
         }
-        else if (cows[1] - cows[0] == 2 || cows[2] - cows[1] == 2) {
+        else if (cows[1] - cows[0] == 2 || cows[2] - cows[1] == 2) {  // if there is a empty spot between two cows
             pw.println(1);
         }
         else {

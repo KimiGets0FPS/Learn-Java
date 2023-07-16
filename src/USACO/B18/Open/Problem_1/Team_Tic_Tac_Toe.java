@@ -7,14 +7,16 @@ import java.util.stream.Collectors;
 
 public class Team_Tic_Tac_Toe {
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B18\\Open\\Problem_1\\tttt.in"));
-        PrintWriter pw = new PrintWriter("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B18\\Open\\Problem_1\\tttt.out");
+        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\kiddy\\Desktop\\java stuff\\src\\USACO\\B18\\Open\\Problem_1\\tttt.in"));
+        PrintWriter pw = new PrintWriter("C:\\Users\\kiddy\\Desktop\\java stuff\\src\\USACO\\B18\\Open\\Problem_1\\tttt.out");
         String[][] ttt = new String[3][3];
         for (int i = 0; i < 3; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             String[] cow = st.nextToken().split("");
             System.arraycopy(cow, 0, ttt[i], 0, cow.length);
         }
+        br.close();
+
         int single_victory = 0;
         int team_victory = 0;
 

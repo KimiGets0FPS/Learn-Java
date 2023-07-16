@@ -1,64 +1,90 @@
 package USACO.B19.Dec.Problem_3;
 
-import java.util.*;
 import java.io.*;
+import java.util.*;
+
+class Kattio extends PrintWriter {
+    private final BufferedReader r;
+    private StringTokenizer st;
+
+    public Kattio(String problemName) throws IOException {
+        super("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B19\\Dec\\Problem_3\\" + problemName+".out");
+        r = new BufferedReader(new FileReader("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B19\\Dec\\Problem_3\\" + problemName+".in"));
+    }
+
+    public String next() {
+        try {
+            while (st == null || !st.hasMoreTokens())
+                st = new StringTokenizer(r.readLine());
+            return st.nextToken();
+        }
+        catch (Exception ignored) {}
+        return null;
+    }
+    public int nextInt() {
+        return Integer.parseInt(next());
+    }
+}
+
 
 public class Livestock_Lineup {
     static class Pair<A, B> {
         A first;
         B second;
-        public Pair(A fval, B sval) {
-            first = fval;
-            second = sval;
+        public Pair(A first_value, B second_value) {
+            first = first_value;
+            second = second_value;
+        }
+
+        public Object getKey() {
+            return first;
+        }
+        public Object getValue() {
+            return second;
         }
     }
+    static List<Pair<String, String>> r = new ArrayList<>();
+    static Map<String, List<String>> rules = new HashMap<>();
+    static String[] cows = {"Beatrice", "Belinda", "Bella", "Bessie", "Betsy", "Blue", "Buttercup", "Sue"};
 
-    static int get_id(String cow) {
-        return switch (cow) {
-            case "Beatrice" -> 0;
-            case "Belinda" -> 1;
-            case "Bella" -> 2;
-            case "Bessie" -> 3;
-            case "Betsy" -> 4;
-            case "Blue" -> 5;
-            case "Buttercup" -> 6;
-            default -> 7;
-        };
-    }
+    public static void main(String[] args) throws IOException {
+        Kattio io = new Kattio("lineup");
+        
+        int n = io.nextInt();
 
-    static String get_cow(int id) {
-        return switch (id) {
-            case 0 -> "Beatrice";
-            case 1 -> "Belinda";
-            case 2 -> "Bella";
-            case 3 -> "Bessie";
-            case 4 -> "Betsy";
-            case 5 -> "Blue";
-            case 6 -> "Buttercup";
-            default -> "Sue";
-        };
-    }
-
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B19\\Dec\\Problem_3\\lineup.in"));
-        PrintWriter pw = new PrintWriter("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B19\\Dec\\Problem_3\\lineup.out");
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int n = Integer.parseInt(st.nextToken());
-        ArrayList<Pair<Integer, Integer>> req = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine());
-            String x = st.nextToken();
-            String y = null;
-            for (int j = 0; j < 5; j++) {
-                y = st.nextToken();
+            String first_cow = io.next();
+            for (int j = 0; j < 4; j++) {
+                io.next();
             }
-            req.add(new Pair<>(get_id(x), get_id(y)));
+            String second_cow = io.next();
+            Pair<String, String> rule;
+            if (first_cow.compareTo(second_cow) > 0) {
+                rule = new Pair<>(second_cow, first_cow);
+            }
+            else {
+                rule = new Pair<>(first_cow, second_cow);
+            }
+            r.add(rule);
+        }
+        r.sort(Comparator.comparing(o -> o.first));
+
+        for (Pair<String, String> rule : r) {
+//            rules.put(rule.getKey(), rule.getValue());
+            System.out.println(rule.getKey()+ ": " + rule.getValue());
         }
 
-        System.out.println(req);
+        for (int i = 0; i < r.size(); i++) {
 
-        pw.close();
+        }
+        // {"Beatrice", "Belinda", "Bella", "Bessie", "Betsy", "Blue", "Buttercup", "Sue"}
+
+        for (int i = 0; i < r.size(); i++) {
+            for (int j = 0; j < cows.length; j++) {
+                
+            }
+        }
+        
+        io.close();
     }
-    
 }

@@ -8,8 +8,8 @@ class Kattio extends PrintWriter {
     private StringTokenizer st;
 
     public Kattio(String problemName) throws IOException {
-        super("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B19\\Dec\\Problem_3\\" + problemName+".out");
-        r = new BufferedReader(new FileReader("C:\\Users\\zhewe\\OneDrive\\Documents\\Coding Projects\\Learn-Java\\src\\USACO\\B19\\Dec\\Problem_3\\" + problemName+".in"));
+        super(problemName+".out");
+        r = new BufferedReader(new FileReader(problemName+".in"));
     }
 
     public String next() {

@@ -142,8 +142,6 @@ public class DayTwo {
                 for (int j=0; j < reports.get(i).size(); j++) {
                     int val = temp.remove(j);
 
-                    System.out.println(temp);
-
                     if (processing(temp, increasing[i])) {
                         safe++;
                     }

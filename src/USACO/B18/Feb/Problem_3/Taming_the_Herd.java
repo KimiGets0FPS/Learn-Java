@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 class Kattio extends PrintWriter {
-    private BufferedReader r;
+    private final BufferedReader r;
     private StringTokenizer st;
 
     public Kattio() {
@@ -26,7 +26,7 @@ class Kattio extends PrintWriter {
             while (st == null || !st.hasMoreTokens())
                 st = new StringTokenizer(r.readLine());
             return st.nextToken();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return null;
     }
@@ -50,9 +50,18 @@ public class Taming_the_Herd {
     public static void main(String[] args) throws IOException {
         Kattio io = new Kattio("taming");
         
-        
+        int n = io.nextInt();
+        int[] log = new int[n];
+        for (int i = 0; i < n; i++) {
+            log[i] = io.nextInt();
+        }
+
+        solution(n, log);
         
         io.close();
     }
+
+    public static void solution(int n, int[] log) {
+
+    }
 }
-    
